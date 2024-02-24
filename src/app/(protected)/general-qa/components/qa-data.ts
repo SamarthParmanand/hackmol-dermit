@@ -187,4 +187,6 @@ export const data = {
       ],
     },
   ],
+  previewText: "Preview answers",
+  showPreviewBeforeComplete: "showAnsweredQuestions",
 };
