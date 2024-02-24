@@ -10,9 +10,25 @@ import {
   Button,
 } from "@nextui-org/react";
 import { FaArrowUpRightFromSquare } from "react-icons/fa6";
+import { useSnapshot } from "valtio";
+import authState from "@/store/user";
+import createClient from "@/utils/supabase/client";
+import toast from "react-hot-toast";
 
 export default function NavBar() {
+  const snap = useSnapshot(authState);
+  const supabase = createClient();
   const pathname = usePathname();
+
+  const handleLogout = async () => {
+    toast.promise(supabase.auth.signOut(), {
+      loading: "logging out",
+      success: "logged out",
+      error: "error logging out",
+    });
+    authState.user = null;
+  };
+
   if (pathname == "/")
     return (
       <Navbar isBordered>
@@ -26,18 +42,29 @@ export default function NavBar() {
 
         <NavbarContent justify="end">
           <NavbarItem>
-            <Button
-              as={Link}
-              className="text-neutral-700"
-              color="primary"
-              href="/auth"
-              variant="shadow"
-              endContent={
-                <FaArrowUpRightFromSquare className="ml-1 text-neutral-700" />
-              }
-            >
-              Try Out
-            </Button>
+            {!snap.user?.id ? (
+              <Button
+                as={Link}
+                className="text-neutral-900"
+                color="primary"
+                href="/auth"
+                variant="shadow"
+                endContent={
+                  <FaArrowUpRightFromSquare className="ml-1 text-neutral-800" />
+                }
+              >
+                Try Out
+              </Button>
+            ) : (
+              <Button
+                className="text-neutral-900"
+                color="primary"
+                variant="shadow"
+                onClick={handleLogout}
+              >
+                Logout
+              </Button>
+            )}
           </NavbarItem>
         </NavbarContent>
       </Navbar>

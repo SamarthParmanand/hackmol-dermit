@@ -12,7 +12,7 @@ import {
   SelectItem,
   Spinner,
 } from "@nextui-org/react";
-import { useRouter } from "next/navigation";
+import { useParams, usePathname, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import { useSnapshot } from "valtio";
@@ -23,7 +23,21 @@ type userDataInterface = {
   gender: string | null;
 };
 
-export default function Page() {
+export default function Page({
+  searchParams,
+}: {
+  searchParams: { v: number };
+}) {
+  useEffect(() => {
+    const searchTimeout = setTimeout(() => {
+      if (searchParams.v == 0) {
+        toast.error("Profile Incomplete.");
+      }
+    }, 100);
+
+    return () => clearTimeout(searchTimeout);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
   const supabase = createClient();
   const snap = useSnapshot(authState);
   const router = useRouter();
@@ -49,8 +63,8 @@ export default function Page() {
           .eq("id", user?.id)
           .single();
 
-        if (error) {
-          console.error(error);
+        if (error?.code == "PGRST116") {
+          console.error("entry not found in user table");
         }
 
         if (data) {
@@ -103,6 +117,10 @@ export default function Page() {
     await supabase.auth.updateUser({
       data: { displayName: formData.get("name") },
     });
+
+    await supabase.auth
+      .getUser()
+      .then((res) => (authState.user = res.data.user));
 
     if (error) {
       console.error(error);

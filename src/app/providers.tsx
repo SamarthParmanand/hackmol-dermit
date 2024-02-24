@@ -7,7 +7,7 @@ export default function Providers({ children }: { children: React.ReactNode }) {
     <>
       <NextUIProvider>
         {children}
-        <Toaster position="top-right" />
+        <Toaster position="bottom-right" />
       </NextUIProvider>
     </>
   );

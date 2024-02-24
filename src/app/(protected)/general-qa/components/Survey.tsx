@@ -16,10 +16,10 @@ export default function Survey() {
     const survey = new Model(data);
     survey.onComplete.add((res) => console.log(res.data));
     survey.onComplete.add(() => {
-      toast.success("Response Saved!\n Redirecting to Home Page", {
-        duration: 3000,
+      toast.success("Response Saved!\n Redirecting to Computer Vision", {
+        duration: 2000,
       });
-      router.push("/");
+      router.push("/capture");
     });
     setSurvey(survey);
   }, [router]);

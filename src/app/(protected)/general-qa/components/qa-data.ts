@@ -36,22 +36,22 @@ export const data = {
         },
       ],
     },
-    {
-      elements: [
-        {
-          name: "skin-concerns",
-          title: "Do you have any specific concerns about your skin?",
-          type: "checkbox",
-          choices: [
-            { value: "acne", text: "Acne" },
-            { value: "dryness", text: "Dryness" },
-            { value: "sensitivity", text: "Sensitivity" },
-            { value: "aging", text: "Signs of aging" },
-            { value: "dark-spots", text: "Dark spots" },
-          ],
-        },
-      ],
-    },
+    // {
+    //   elements: [
+    //     {
+    //       name: "skin-concerns",
+    //       title: "Do you have any specific concerns about your skin?",
+    //       type: "checkbox",
+    //       choices: [
+    //         { value: "acne", text: "Acne" },
+    //         { value: "dryness", text: "Dryness" },
+    //         { value: "sensitivity", text: "Sensitivity" },
+    //         { value: "aging", text: "Signs of aging" },
+    //         { value: "dark-spots", text: "Dark spots" },
+    //       ],
+    //     },
+    //   ],
+    // },
     {
       elements: [
         {
@@ -159,23 +159,23 @@ export const data = {
         },
       ],
     },
-    {
-      elements: [
-        {
-          name: "allergies",
-          title: "Do you have any known allergies or sensitivities?",
-          type: "checkbox",
-          choices: [
-            { value: "pollen", text: "Pollen" },
-            { value: "dust", text: "Dust mites" },
-            { value: "pets", text: "Pets (e.g., cats, dogs)" },
-            { value: "certain-foods", text: "Certain foods" },
-            { value: "skincare-products", text: "Skincare products" },
-            { value: "medications", text: "Medications" },
-          ],
-        },
-      ],
-    },
+    // {
+    //   elements: [
+    //     {
+    //       name: "allergies",
+    //       title: "Do you have any known allergies or sensitivities?",
+    //       type: "checkbox",
+    //       choices: [
+    //         { value: "pollen", text: "Pollen" },
+    //         { value: "dust", text: "Dust mites" },
+    //         { value: "pets", text: "Pets (e.g., cats, dogs)" },
+    //         { value: "certain-foods", text: "Certain foods" },
+    //         { value: "skincare-products", text: "Skincare products" },
+    //         { value: "medications", text: "Medications" },
+    //       ],
+    //     },
+    //   ],
+    // },
     {
       elements: [
         {

@@ -3,8 +3,8 @@ import Prodivers from "../providers";
 import InitUser from "@/components/InitUser";
 
 export const metadata: Metadata = {
-  title: "Hackmol 5.0",
-  description: "DermIT-The Batch",
+  title: "Hackmol 5.0-DermIT",
+  description: "The Batch fr",
 };
 
 export default function RootLayout({
