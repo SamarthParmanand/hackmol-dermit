@@ -67,6 +67,7 @@ export default function Page() {
           <Button
             startContent={<CgGoogle className="pt-0.5" />}
             onClick={handleLogin}
+            className="dermit-btn"
           >
             Sign In
           </Button>

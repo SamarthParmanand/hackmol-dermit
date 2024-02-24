@@ -92,7 +92,7 @@ export default function Capture() {
           />
         </label>
         {imageFiles.length > 0 && (
-          <div className="mt-4 flex justify-start md:justify-center items-center h-[10rem] w-full overflow-x-scroll">
+          <div className="mt-4 flex justify-start md:justify-center items-center h-[10rem w-full sm:w-[1/2] overflow-x-scroll">
             {imageFiles.map((file, index) => (
               <div key={index} className="relative m-2">
                 <Image
@@ -121,7 +121,7 @@ export default function Capture() {
           type="submit"
           className={`${
             isSubmitting || !imageFiles.length ? "disabled" : ""
-          } w-full h-12 mt-4`}
+          } w-full h-12 mt-4 dermit-btn`}
         >
           {isSubmitting ? <Spinner color="secondary" size="sm" /> : "Submit"}
         </Button>

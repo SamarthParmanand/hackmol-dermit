@@ -188,7 +188,9 @@ export default function Page({
                   Prefer not to say
                 </SelectItem>
               </Select>
-              <Button type="submit">Update Info</Button>
+              <Button className="dermit-btn" type="submit">
+                Update Info
+              </Button>
             </form>
           </CardBody>
         </Card>

@@ -3,4 +3,7 @@
 @tailwind utilities;
 
 @layer utilities {
+  .dermit-btn {
+    @apply bg-gradient-to-r from-primary-600 to-secondary-500 text-white font-semibold tracking-wide px-4 py-2 rounded-md shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-secondary-500 focus:ring-opacity-50;
+  }
 }
