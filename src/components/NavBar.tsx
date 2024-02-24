@@ -92,8 +92,9 @@ export default function NavBar() {
         <NavbarItem>
           <Avatar
             src={snap.user?.user_metadata?.avatar_url}
-            isBordered
             color="primary"
+            isBordered
+            showFallback
             as={Link}
             href="/profile"
           />
