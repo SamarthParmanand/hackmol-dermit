@@ -3,12 +3,12 @@ import BackgroundBeams, { paths } from "@/ui/BackgroundBeams";
 
 export default function Walkthrough() {
   return (
-    <div className="w-full h-[90dvh] mx-auto px-8 relative flex flex-col items-center justify-center">
+    <div className="w-full h-full mx-auto px-8 relative flex flex-col items-center justify-center">
       <h1 className="relative z-10 text-3xl md:text-7xl md:py-4 md:my-3 bg-clip-text text-transparent bg-gradient-to-b from-primary-200 to-secondary-800 text-center font-sans font-bold">
         Walking through the steps
       </h1>
       <p />
-      <HoverEffect items={steps} className="w-[80rem]" />
+      <HoverEffect items={steps} className="w-[20rem] sm:w-[80rem]" />
       <BackgroundBeams paths={paths} />
     </div>
   );

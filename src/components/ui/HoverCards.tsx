@@ -28,14 +28,13 @@ export const HoverEffect = ({
     >
       {items.map((item, idx) => (
         <Badge
-          key={item.link}
+          key={item.title}
           content={idx + 1}
           className="h-12 w-12 text-zinc-100 font-bold text-lg absolute z-20 bg-gradient-to-tl from-primary-700 to-secondary-500"
           placement="top-left"
         >
           <Link
             href={item?.link}
-            key={item?.link}
             className="relative group block p-2 h-full w-full"
             onMouseEnter={() => setHoveredIndex(idx)}
             onMouseLeave={() => setHoveredIndex(null)}

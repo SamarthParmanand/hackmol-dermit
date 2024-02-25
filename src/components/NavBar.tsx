@@ -37,7 +37,7 @@ export default function NavBar() {
 
   if (pathname == "/")
     return (
-      <Navbar isBordered>
+      <Navbar isBordered shouldHideOnScroll>
         <NavbarContent className="pr-3" justify="center">
           <NavbarBrand>
             <Button

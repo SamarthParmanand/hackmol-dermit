@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef, useState } from "react";
-import { Button, Spinner, Image, Input } from "@nextui-org/react";
+import { Button, Spinner, Image, Input, Link } from "@nextui-org/react";
 import { MdDeleteForever } from "react-icons/md";
 import { useSnapshot } from "valtio";
 import authState from "@/store/user";
@@ -40,7 +40,6 @@ export default function Capture() {
       );
       setImageFiles([]);
     } catch (error) {
-      toast.error(error as string);
       console.error(error);
     } finally {
       setIsSubmitting(false);
@@ -126,6 +125,9 @@ export default function Capture() {
           {isSubmitting ? <Spinner color="secondary" size="sm" /> : "Submit"}
         </Button>
       </form>
+      {/* <Button as={Link} href="nlp">
+        Go to NLP Module
+      </Button> */}
     </div>
   );
 }
